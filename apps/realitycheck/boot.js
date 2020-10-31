@@ -30,6 +30,18 @@
     }
   }
 
+  //Create realitycheck.json on install
+  if (!state) {
+    const _state = {
+      awake: true,
+      changed: true,
+      sleepCycleInProgress: false,
+      buzzCounter: 0
+    }
+    require("Storage").write("realitycheck.json", JSON.stringify(_state));
+    state = _state;
+  }
+
   //Check if we are in the sleep loop
   if (state.handler === "handleSleepLoop") {
     console.log('Sleep loop started.');

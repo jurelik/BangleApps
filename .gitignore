@@ -6,3 +6,7 @@ package-lock.json
 appdates.csv
 .vscode
 .idea/
+tags
+tags.lock
+tags.temp
+*.swp

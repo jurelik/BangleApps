@@ -89,11 +89,11 @@ function testingLogger(msg) {
 //Watch buzz handler
 function handleBuzz() {
   return new Promise((resolve) => {
-    Bangle.buzz(50, 1)
+    Bangle.buzz(100, 1)
       .then(() => new Promise(_resolve => setTimeout(_resolve,150)))
-      .then(() => Bangle.buzz(50, 1))
+      .then(() => Bangle.buzz(100, 1))
       .then(() => new Promise(_resolve => setTimeout(_resolve,150)))
-      .then(() => Bangle.buzz(50, 1))
+      .then(() => Bangle.buzz(100, 1))
       .then(resolve)
       .catch(err => resolve());
   });

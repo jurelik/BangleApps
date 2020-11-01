@@ -34,7 +34,8 @@
   if (!state) {
     const _state = {
       awake: true,
-      changed: true,
+      nextTimeout: currentTime + (60000 * 90), //Set the first timeout to happen in an hour and a half for simplicity's sake
+      changed: false,
       sleepCycleInProgress: false,
       buzzCounter: 0
     }
@@ -62,7 +63,7 @@
 
   Bangle.removeListener('accel', handleAccel);
 
-  return setTimeout(() => { //Load as per schedule if timeout is set
+  return setTimeout(() => { //Load as per schedule
     load("realitycheck.js");
   }, timeout);
 })();

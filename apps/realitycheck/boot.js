@@ -10,7 +10,7 @@
   }
 
   function handleAccel(acc, state) {
-    if (acc.diff > 0.4 && !state.sleepCycleInProgress) {
+    if (acc.diff > 0.2 && !state.sleepCycleInProgress) {
       console.log('Sleep cycle started.');
       testingLogger('Sleep cycle started.');
 

@@ -90,8 +90,12 @@ function testingLogger(msg) {
 function handleBuzz() {
   return new Promise((resolve) => {
     Bangle.buzz(100, 1)
+      .then(() => new Promise(_resolve => setTimeout(_resolve, 100)))
+      .then(() => Bangle.buzz(50, 1))
       .then(() => new Promise(_resolve => setTimeout(_resolve,150)))
       .then(() => Bangle.buzz(100, 1))
+      .then(() => new Promise(_resolve => setTimeout(_resolve, 100)))
+      .then(() => Bangle.buzz(50, 1))
       .then(() => new Promise(_resolve => setTimeout(_resolve,150)))
       .then(() => Bangle.buzz(100, 1))
       .then(resolve)
